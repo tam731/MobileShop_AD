@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -136,46 +139,49 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Advertisement.cs">
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Comment.cs">
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MobileManagement.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobileManagement.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MobileManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MobileManagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobileManagement.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\News.cs">
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OderDetail.cs">
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QLMobileShop.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLMobileShop.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QLMobileShop.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QLMobileShop.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLMobileShop.edmx</DependentUpon>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Supplier.cs">
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Table.cs">
+      <DependentUpon>MobileManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>QLMobileShop.tt</DependentUpon>
+      <DependentUpon>MobileManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -228,25 +234,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\QLMobileShop.Context.tt">
+    <Content Include="Models\MobileManagement.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QLMobileShop.Context.cs</LastGenOutput>
-      <DependentUpon>QLMobileShop.edmx</DependentUpon>
+      <DependentUpon>MobileManagement.edmx</DependentUpon>
+      <LastGenOutput>MobileManagement.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\QLMobileShop.tt">
+    <Content Include="Models\MobileManagement.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLMobileShop.edmx</DependentUpon>
-      <LastGenOutput>QLMobileShop.cs</LastGenOutput>
+      <DependentUpon>MobileManagement.edmx</DependentUpon>
+      <LastGenOutput>MobileManagement.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\QLMobileShop.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLMobileShop.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QLMobileShop.edmx.diagram">
-      <DependentUpon>QLMobileShop.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -280,6 +279,13 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <EntityDeploy Include="Models\MobileManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MobileManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MobileManagement.edmx.diagram">
+      <DependentUpon>MobileManagement.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -309,10 +315,12 @@
     <Content Include="Views\DemoCss\Index.cshtml" />
     <Content Include="Views\Layout\_HomeLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\User\Account.cshtml" />
     <Content Include="Views\Product\Product1.cshtml" />
     <Content Include="Views\Product\Product2.cshtml" />
     <Content Include="Views\Product\ProductPartial.cshtml" />
+    <Content Include="Views\User\Account.cshtml" />
+    <Content Include="Views\Layout\_ProductLayoutPage1.cshtml" />
+    <Content Include="Views\DemoCss\demo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Index\" />

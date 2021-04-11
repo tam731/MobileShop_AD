@@ -9,7 +9,7 @@ namespace MobileShop.Controllers
     public class DemoCssController : Controller
     {
         // GET: DemoCss
-        public ActionResult Index()
+        public ActionResult demo()
         {
             return View();
         }

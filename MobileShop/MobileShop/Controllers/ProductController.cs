@@ -10,7 +10,7 @@ namespace MobileShop.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        MobileManagementEntities db = new MobileManagementEntities();
+        ShopMobileManagementEntities db = new ShopMobileManagementEntities();
         public ActionResult Product1()
         {
             var listProduct = db.Products.Where(x => x.CategoryID == 1).ToList();
