@@ -131,7 +131,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DemoCssController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -310,17 +309,16 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\User\UserDetail.cshtml" />
-    <Content Include="Views\User\UserSort.cshtml" />
-    <Content Include="Views\User\UserGroup.cshtml" />
-    <Content Include="Views\DemoCss\Index.cshtml" />
     <Content Include="Views\Layout\_HomeLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\Product1.cshtml" />
     <Content Include="Views\Product\Product2.cshtml" />
     <Content Include="Views\Product\ProductPartial.cshtml" />
-    <Content Include="Views\User\Account.cshtml" />
     <Content Include="Views\Layout\_ProductLayoutPage1.cshtml" />
-    <Content Include="Views\DemoCss\demo.cshtml" />
+    <Content Include="Views\Home\AccountLogin.cshtml" />
+    <Content Include="Views\Home\Regiter.cshtml" />
+    <Content Include="Views\Home\_AccountPartial.cshtml" />
+    <Content Include="Views\Home\_HeaderTopPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Index\" />
