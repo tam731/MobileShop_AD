@@ -1,0 +1,9 @@
+﻿<div class="col-md-4">
+    <div id="cart">
+        @*<a class="btn btn-1" href="@Html.Action("ViewCart","Home")">
+            <span class="glyphicon glyphicon-shopping-cart"></span>CART : 0 ITEM
+        </a>*@
+        @Html.ActionLink("CART ", "ViewCart", "Home", new { @class= "glyphicon glyphicon-shopping-cart" })
+    </div>
+</div>
+

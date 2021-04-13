@@ -4,19 +4,13 @@
 @model User
 @{
     ViewBag.Title = "Regiter";
-    Layout = "~/Views/Layout/_HomeLayout.cshtml";
+    Layout = "~/Views/Layout/_IndexLayout.cshtml";
 }
 
 <div id="page-content" class="single-page">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="account.html">Account</a></li>
-                </ul>
-            </div>
-        </div>
+        @*link*@
+        @Html.Partial("~/Views/Home/_AccountPartial.cshtml")
         <div class="row">
 
             <div class="col-md-6">

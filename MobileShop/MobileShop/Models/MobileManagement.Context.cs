@@ -13,10 +13,10 @@ namespace MobileShop.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ShopMobileManagementEntities : DbContext
+    public partial class MobileManagementEntities1 : DbContext
     {
-        public ShopMobileManagementEntities()
-            : base("name=ShopMobileManagementEntities")
+        public MobileManagementEntities1()
+            : base("name=MobileManagementEntities1")
         {
         }
     
@@ -33,7 +33,8 @@ namespace MobileShop.Models
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<Table> Tables { get; set; }
         public virtual DbSet<User> Users { get; set; }
+
+        public System.Data.Entity.DbSet<MobileShop.Models.ItemCart> ItemCarts { get; set; }
     }
 }

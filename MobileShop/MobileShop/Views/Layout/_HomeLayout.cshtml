@@ -8,7 +8,7 @@
     <meta name="description" content="Free Bootstrap Themes by 365Bootstrap dot com - Free Responsive Html5 Templates">
     <meta name="author" content="http://www.365bootstrap.com">
 
-    <title>Mobile Shop | Free Bootstrap Themes by 365bootstrap.com</title>
+    <title>Mobile Shop </title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" type="text/css">
@@ -54,9 +54,16 @@
                     <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
                 </form>
             </div>
-            <div class="col-md-4">
-                <div id="cart"><a class="btn btn-1" href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span>CART : 0 ITEM</a></div>
-            </div>
+            <!--Cart Item-->
+            @*@Html.Action("CartPartial", "Cart")*@
+            @*<div class="col-md-4">
+                <div id="cart">
+                    <a class="btn btn-1" href="@Html.Action("ViewCart","ItemCarts")">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>CART : 0 ITEM
+                    </a>
+                </div>
+            </div>*@
+
         </div>
     </header>
     <!--Navigation-->

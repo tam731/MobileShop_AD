@@ -13,7 +13,7 @@ namespace MobileShop.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        ShopMobileManagementEntities db = new ShopMobileManagementEntities();
+        MobileManagementEntities1 db = new MobileManagementEntities1();
         public ActionResult Index()
         {
             return View();
@@ -31,26 +31,22 @@ namespace MobileShop.Controllers
             {
                 string userName = collection["txtusername"].ToString();
                 string password = collection["txtpassword"].ToString();
+              
+                    //var f_password = GetMD5(password);
+                    var data = db.Users.Where(s => s.UserName.Equals(userName) && s.Password.Equals(password)).ToList();
 
-                //var f_password = GetMD5(password);
-                var data = db.Users.Where(s => s.UserName.Equals(userName) && s.Password.Equals(password)).ToList();
-                //if (u != null)
-                //{
-                //    Session["UserName"] = u;
-                //    return RedirectToAction("Index");
-                //}
-                if (data.Count() > 0)
-                {
-                    //add session
-                    Session["FullName"] = data.FirstOrDefault().FullName;
-
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    ViewBag.error = "Login failed";
-                    return RedirectToAction("AccountLogin");
-                }
+                    if (data.Count() > 0)
+                    {
+                        //add session
+                        Session["FullName"] = data.FirstOrDefault().FullName;
+                        return RedirectToAction("Index");
+                        
+                    }
+                    else
+                    {
+                        
+                        return Content("Account or password is incorrect");
+                    }
             }
             return View();
             
@@ -96,6 +92,14 @@ namespace MobileShop.Controllers
             }
             return byte2String;
         }
+        public ActionResult ViewCart()
+        {
+            return View();
+        }
 
+        public ActionResult CartPartial()
+        {
+            return PartialView();
+        }
     }
 }

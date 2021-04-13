@@ -12,7 +12,7 @@ namespace MobileShop.Controllers
     public class UserController : Controller
     {
         // GET: User
-        ShopMobileManagementEntities db = new ShopMobileManagementEntities();
+        MobileManagementEntities1 db = new MobileManagementEntities1();
         public ActionResult Index()
         {
             var listUsers = db.Users.ToList();

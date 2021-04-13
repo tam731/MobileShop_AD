@@ -50,7 +50,6 @@
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="Discount" Type="Double" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="Self.FK_OderDetails_Orders" FromRole="OderDetails" ToRole="Orders" />
     <NavigationProperty Name="Product" Relationship="Self.FK_OderDetails_Products" FromRole="OderDetails" ToRole="Products" />
   </EntityType>
@@ -97,12 +96,6 @@
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Products" Relationship="Self.FK_Suppliers_Products" FromRole="Suppliers" ToRole="Products" />
-  </EntityType>
-  <EntityType Name="Table">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -202,7 +195,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ShopMobileManagementEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="MobileManagementEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Advertisements" EntityType="Self.Advertisement" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Comments" EntityType="Self.Comment" />
@@ -211,7 +204,6 @@
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
-    <EntitySet Name="Tables" EntityType="Self.Table" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <AssociationSet Name="FK_Categorys_Products" Association="Self.FK_Categorys_Products">
       <End Role="Categories" EntitySet="Categories" />

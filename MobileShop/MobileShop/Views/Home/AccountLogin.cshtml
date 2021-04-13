@@ -4,7 +4,7 @@
 @model User
 @{
     ViewBag.Title = "AccountLogin";
-    Layout = "~/Views/Layout/_HomeLayout.cshtml";
+    Layout = "~/Views/Layout/_IndexLayout.cshtml";
 }
 
 
@@ -14,9 +14,11 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="heading"><h2>Login</h2></div>
-                @using (Html.BeginForm("AccountLogin", "Home"))
+                @using (Ajax.BeginForm("AccountLogin", "Home",new AjaxOptions {
+                    InsertionMode =InsertionMode.Replace,UpdateTargetId= "msg1"
+                }))
                 {
-                   
+
                 <form name="form1" id="ff1" method="post">
                     @*@Html.AntiForgeryToken()*@
 
@@ -28,6 +30,7 @@
                         <input type="text" class="form-control" id="password" name="txtpassword" placeholder="Password :" required="" />
                         @*@Html.TextBoxFor(x => x.Password, new { @class = "form-control", @id = "password", @name = "txtpassword", @placeholder = "Password :", @required = "" })*@
                     </div>
+                    <h4  style=" font-family:'Times New Roman';font-weight:lighter; color:red; text-align:center;" id="msg1" ></h4>
                     <button type="submit" class="btn btn-1" name="login" id="login">Login</button>
                     <a href="#">Forgot Your Password ?</a>
                 </form>
